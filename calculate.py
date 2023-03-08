@@ -31,12 +31,15 @@ if __name__ == "__main__":
     type = input("Podaj rodzaj operacji: 1-dodawanie, 2-odejmowanie, 3-mnozenie, 4-dzielenie: ")
     logging.info("The programme is calling with first parameter %s" %type)
     number1 = input("Podaj pierwszą liczbę działania: ")
-    number1 = float(number1)
+    number1 = float(sys.argv[1])
     logging.info("First variable given: %s" %number1)
     number2 = input("Podaj drugą liczbę działania: ")
-    number2 = float(number2)
+    number2 = float(sys.argv[2])
     logging.info("Second variable given: %s" %number1)
     type_no = ["1", "2", "3", "4"]
+    type = str(sys.argv[3])
+    logging.info("Podano rodzaj operacji: %s" %type + "  gdzie 1-dodawanie, 2-odejmowanie, 3-mnozenie, 4-dzielenie")
+    calculation(type = 'sys.argv[3]', number1 = 'sys.argv[1]', number2= 'sys.argv[2]')
     for type_no in type:
         if type_no == "1":
             result = round(number1 + number2, 2)
